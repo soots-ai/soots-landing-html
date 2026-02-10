@@ -2935,9 +2935,8 @@ const themeSwitcher = {
     };
   },
   setInitialTheme() {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const storedTheme = localStorage.getItem("color-theme");
-    const isDark = storedTheme === "dark" || !storedTheme && prefersDark;
+    const isDark = storedTheme === "dark";
     this.setTheme(isDark ? "dark" : "light");
   },
   bindEvents() {
