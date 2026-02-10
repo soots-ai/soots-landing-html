@@ -43,6 +43,13 @@ if (fs.existsSync(faviconSrc)) {
   console.log('Copied leadgen-video/favicon.png');
 }
 
+// Copy leadgen-video/ogbanner-soots.png for Open Graph
+const ogBannerSrc = path.join(__dirname, 'leadgen-video', 'ogbanner-soots.png');
+if (fs.existsSync(ogBannerSrc)) {
+  fs.copyFileSync(ogBannerSrc, path.join(distDir, 'ogbanner-soots.png'));
+  console.log('Copied leadgen-video/ogbanner-soots.png');
+}
+
 // Fix main.js reference in HTML (post-build may rename hashed file)
 const htmlFiles = ['index.html'].map((f) => path.join(distDir, f));
 for (const filePath of htmlFiles) {
