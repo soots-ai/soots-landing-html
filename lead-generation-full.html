@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <Component src="src/components/shared/head-links.htm" />
+    <title>The grind on autopilot - Soots</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body>
+    <Component
+      src="src/components/shared/header-one.htm"
+      class="bg-white/60 backdrop-blur-[25px] top-5 dark:bg-background-7 dark:border dark:border-stroke-7 max-[400px]:max-w-[340px]"
+      mega-menu-color="dark:bg-background-7"
+      btn-class="btn-secondary dark:btn-accent dark:hover:btn-white-dark hover:btn-white"
+    />
+    <main>
+      <Component src="src/components/pages/lead-generation/hero.htm" />
+      <Component src="src/components/pages/lead-generation/about.htm" />
+      <Component src="src/components/pages/lead-generation/work.htm" />
+      <Component src="src/components/pages/lead-generation/feature.htm" />
+      <Component src="src/components/pages/lead-generation/pricing.htm" />
+      <Component src="src/components/pages/lead-generation/integration.htm" />
+      <Component
+        src="src/components/pages/lead-generation/reviews.htm"
+        badge-class="badge-yellow"
+        background="dark:bg-background-6 pb-24 md:pb-36 lg:pb-44 xl:pb-[200px]"
+      />
+    </main>
+    <Component src="src/components/shared/footer-two.htm" />
+    <Component src="src/components/shared/video-modal.htm" />
+  </body>
+</html>
