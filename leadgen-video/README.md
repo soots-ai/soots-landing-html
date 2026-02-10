@@ -2,15 +2,31 @@
 
 Isolated leadgen page for GitHub Pages. Self-contained, no other site pages or content.
 
-## Build
+## Admin: Edit, Build, Deploy
 
-From project root:
+**Edit** → **Build** → **Push** — the site deploys automatically.
 
-```bash
-npm run build:leadgen
-```
+1. **Edit** – Change content in the `leadgen-video/` folder:
+   - `hero.htm` – hero section, headline, CTA, demo video
+   - `head-links.htm` – meta tags, favicon, structured data
+   - `header.htm` – header, logo
+   - `footer.htm` – footer, newsletter form
 
-Output: `dist-leadgen/` with `index.html` and assets.
+2. **Build** – From project root:
+   ```bash
+   npm run build:leadgen
+   ```
+   Output: `dist-leadgen/` with `index.html` and assets.
+
+3. **Push** – Commit and push to `main`:
+   ```bash
+   git add .
+   git commit -m "Update leadgen"
+   git push origin main
+   ```
+   The GitHub Actions workflow builds and deploys to GitHub Pages. No manual deploy step.
+
+**Live URL:** `https://soots-ai.github.io/soots-landing-html/`
 
 ## Prerequisites
 
@@ -87,33 +103,11 @@ Set the video URL in:
 - `leadgen-video/hero.htm` – `<source src="...">` for the demo video
 - `leadgen-video/head-links.htm` – `contentUrl` in the VideoObject JSON-LD schema
 
-## Deploy to GitHub Pages
+## Deploy (automatic)
 
-1. Push the contents of `dist-leadgen/` to your GitHub Pages repo.
-2. Or deploy via GitHub Actions:
+Pushing to `main` triggers `.github/workflows/deploy-leadgen.yml`: it builds and deploys `dist-leadgen/` to the `gh-pages` branch. GitHub Pages serves it automatically.
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build:leadgen
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist-leadgen
-```
+**Pages setup:** Repo → Settings → Pages → Source: `gh-pages` branch, `/` (root).
 
 ## Preview
 

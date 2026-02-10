@@ -31,9 +31,9 @@ const themeSwitcher = {
   },
 
   setInitialTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedTheme = localStorage.getItem('color-theme');
-    const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+    // Default to light; only use dark if user explicitly chose it via toggle
+    const isDark = storedTheme === 'dark';
     this.setTheme(isDark ? 'dark' : 'light');
   },
 
