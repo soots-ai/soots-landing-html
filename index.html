@@ -17,6 +17,15 @@ Head links – SEO optimized
 <style>
   html { color-scheme: light; }
   html.dark { color-scheme: dark; }
+  #leadgen-header[data-scrolled="true"] {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+  html.dark #leadgen-header[data-scrolled="true"] {
+    background-color: #181d26;
+    border: 1px solid #2a333e;
+  }
 </style>
 <meta name="title" content="When in Escalation Mode – Don't Just React, Decide | Soots" />
 <meta
@@ -149,10 +158,12 @@ Header v1
 ===========================-->
 <header role="banner">
   <div
-    class="header-one opacity-0 rounded-full lp:!max-w-[1290px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] min-[500px]:max-w-[450px] min-[425px]:max-w-[375px] max-w-[350px] mx-auto w-full fixed left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-2.5 py-1 top-2 bg-white/60 backdrop-blur-[25px] top-5 dark:bg-background-7 dark:border dark:border-stroke-7 max-[400px]:max-w-[340px]"
+    id="leadgen-header"
+    class="header-one opacity-0 rounded-full lp:!max-w-[1290px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] min-[500px]:max-w-[450px] min-[425px]:max-w-[375px] max-w-[350px] mx-auto w-full fixed left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-2.5 py-1 top-2 transition-[background-color,backdrop-filter,border-color] duration-300 bg-transparent border border-transparent top-5 max-[400px]:max-w-[340px]"
     data-ns-animate
     data-direction="up"
     data-offset="100"
+    data-scrolled="false"
   >
     <a href="/" aria-label="Soots – Home" class="block">
       <figure class="lg:max-w-[100px] lg:block hidden pl-4">
@@ -317,15 +328,13 @@ hero section
   </video>
 
   <div
-    class="relative sm:pt-[120px] pt-[80px] pb-[140px] max-[641px]:pb-16 max-[426px]:pb-10 z-10"
+    class="relative sm:pt-[72px] pt-[56px] pb-6 z-10"
   >
-    <!-- Background shape-->
-
     <!-- Hero images  -->
     <figure
       data-ns-animate
       data-delay="0.1"
-      class="max-[426px]:size-8 shrink-0 w-[40px] h-[40px] rounded-full absolute left-[8%] top-[15%] md:left-[19%] md:top-[22%] xl:left-[26%] xl:top-[22%] -z-10 rounded-br-none bg-white dark:bg-accent/20 p-[3px] parallax-effect"
+      class="max-[426px]:size-8 shrink-0 w-[40px] h-[40px] rounded-full absolute left-[4%] top-[28%] md:left-[12%] md:top-[32%] xl:left-[18%] xl:top-[35%] -z-10 rounded-br-none bg-white dark:bg-accent/20 p-[3px] parallax-effect"
       data-parallax-value="1.8"
       data-data-parallax-x="1"
       data-data-parallax-y="0.5"
@@ -340,7 +349,7 @@ hero section
     <figure
       data-ns-animate
       data-delay="0.1"
-      class="max-[426px]:size-8 shrink-0 w-[40px] h-[40px] rounded-full absolute right-[12%] top-[15%] md:right-[20%] md:top-[19%] xl:right-[24%] xl:top-[19%] -z-10 rounded-bl-none bg-white dark:bg-accent/20 p-[3px] parallax-effect"
+      class="max-[426px]:size-8 shrink-0 w-[40px] h-[40px] rounded-full absolute right-[6%] top-[28%] md:right-[12%] md:top-[32%] xl:right-[16%] xl:top-[35%] -z-10 rounded-bl-none bg-white dark:bg-accent/20 p-[3px] parallax-effect"
       data-parallax-value="2.4"
       data-data-parallax-x="1"
       data-data-parallax-y="1"
@@ -444,43 +453,42 @@ hero section
         class="size-9 rounded-full max-[426px]:size-6 object-contain"
       />
     </figure>
-    <!-- Content -->
+    <!-- Content: heading, tagline, CTA above video -->
     <div class="main-container flex flex-col items-center text-center z-10">
-      <div class="mb-5"></div>
       <h1
         id="hero-heading"
         data-ns-animate
         data-delay="0.2"
-        class="font-medium max-[426px]:mb-2.5 mb-4 max-[426px]:text-heading-5 max-sm:text-heading-4 max-sm:max-w-[450px]"
+        class="font-medium max-[426px]:mb-1.5 mb-2 max-[426px]:text-heading-6 max-sm:text-heading-5 max-sm:max-w-[450px]"
       >
         When in escalation mode...
         <br class="hidden md:block" /> 
         Don't just react, decide!
       </h1>
-      <p data-ns-animate data-delay="0.3" class="max-w-[625px] mb-6 sm:mb-8 max-sm:max-w-[420px]">
+      <p data-ns-animate data-delay="0.3" class="max-w-[600px] mb-3 max-sm:max-w-[400px] text-tagline-1 max-sm:text-tagline-2">
         Soots continuously captures decisions, assumptions, and intent as work happens, so organizations can understand what is true, what was agreed, and why.
       </p>
       <button
         type="button"
         id="pilot-modal-trigger"
-        class="btn btn-primary btn-xl hover:btn-secondary normal-case min-h-[48px]"
+        class="btn btn-primary btn-xl hover:btn-secondary normal-case min-h-[48px] mb-2"
         aria-label="Start here – get early access to Soots"
       >
         <span>Start Here</span>
       </button>
     </div>
   </div>
+  <!-- Video -->
   <div
     data-ns-animate
-    data-delay="0.7"
+    data-delay="0.5"
     data-instant="true"
-    class="relative max-w-[900px] lg:max-w-[1000px] xl:max-w-[1100px] mx-auto max-sm:rounded-2xl rounded-4xl max-sm:p-2 p-2.5 max-sm:max-w-[450px] max-[500px]:!mx-5 mb-16 md:mb-20 lg:mb-24 xl:mb-32"
+    class="relative max-w-[900px] lg:max-w-[1000px] xl:max-w-[1100px] mx-auto max-sm:rounded-2xl rounded-4xl max-sm:p-2 p-2.5 max-sm:max-w-[450px] max-[500px]:!mx-5 mb-12 md:mb-16"
   >
-    <!-- Video Player -->
-    <div class="video-base relative rounded-[25px] max-sm:rounded-xl overflow-hidden flex flex-col items-center justify-center bg-background-3 dark:bg-background-7 w-full py-5 px-3 md:py-7 md:px-4 lg:py-10 lg:px-5" style="max-width: 1050px; margin: 0 auto;">
+    <div class="video-base relative rounded-[25px] max-sm:rounded-xl overflow-hidden bg-background-3 dark:bg-background-7 w-full p-2.5 leading-[0]" style="max-width: 1050px; margin: 0 auto;">
       <video
         id="hero-card-video"
-        class="video-mp4 block rounded-[25px] max-sm:rounded-xl w-full h-auto"
+        class="video-mp4 block rounded-[25px] max-sm:rounded-xl w-full h-auto m-0 align-top object-cover object-top"
         controls
         preload="metadata"
         width="800"
@@ -713,5 +721,17 @@ Footer v2
   <script  src="./assets/main.js"></script>
 </footer>
 
+    <script>
+      (function() {
+        var header = document.getElementById('leadgen-header');
+        if (!header) return;
+        var scrollThreshold = 20;
+        function updateHeader() {
+          header.setAttribute('data-scrolled', window.scrollY > scrollThreshold ? 'true' : 'false');
+        }
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
+      })();
+    </script>
   </body>
 </html>
