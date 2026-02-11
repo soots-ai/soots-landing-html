@@ -126,7 +126,7 @@ npm run build:leadgen
 yarn build:leadgen
 ```
 
-Output goes to `dist-leadgen/` with `index.html` as the entry. Deploy the contents of `dist-leadgen/` to your GitHub Pages repo. Ensure `soots-website-demo-1.mp4` is in `public/` before building.
+Output goes to `dist-leadgen/` with `index.html` as the entry. Deploy the contents of `dist-leadgen/` to your GitHub Pages repo. Ensure `soots-website-demo-2.mp4` is in `public/` before building.
 
 Preview locally: `npm run preview:leadgen`
 

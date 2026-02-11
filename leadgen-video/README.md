@@ -34,7 +34,7 @@ Isolated leadgen page for GitHub Pages. Self-contained, no other site pages or c
 
 ## Host demo video on S3
 
-`soots-website-demo-1.mp4` exceeds GitHub’s 100 MB limit. Host it on AWS S3, then update the URL in the leadgen-video code.
+`soots-website-demo-2.mp4` exceeds GitHub’s 100 MB limit. Host it on AWS S3, then update the URL in the leadgen-video code.
 
 ### 1. Create an S3 bucket
 
@@ -70,7 +70,7 @@ Replace `YOUR-BUCKET-NAME` with your bucket name.
 ### 3. Upload the video
 
 1. Bucket → **Objects** → **Upload**
-2. Select `soots-website-demo-1.mp4` (from project root)
+2. Select `soots-website-demo-2.mp4` (from project root)
 3. Upload
 
 ### 4. Set Content-Type
@@ -85,13 +85,13 @@ Replace `YOUR-BUCKET-NAME` with your bucket name.
 Format:
 
 ```
-https://YOUR-BUCKET-NAME.s3.REGION.amazonaws.com/soots-website-demo-1.mp4
+https://YOUR-BUCKET-NAME.s3.REGION.amazonaws.com/soots-website-demo-2.mp4
 ```
 
 Example:
 
 ```
-https://soots-assets.s3.us-east-1.amazonaws.com/soots-website-demo-1.mp4
+https://soots-assets.s3.us-east-1.amazonaws.com/soots-website-demo-2.mp4
 ```
 
 If using CloudFront or a custom domain, use that URL instead.
