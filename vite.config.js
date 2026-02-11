@@ -12,7 +12,8 @@ const getHtmlEntries = () => {
   // Define the specific pages we want to build with their desired output names
   const pagesToBuild = {
     'leadgen-video': 'leadgen-video.html',
-    'lead-generation': 'lead-generation.html', 
+    'lead-generation': 'lead-generation.html',
+    'lead-generation/index': 'lead-generation/index.html',
     'contact': 'contact-us-page.html',
     'signup': 'signup.html',
     'faq': 'faq-page.html',
@@ -98,6 +99,7 @@ const cleanUrlDevServer = () => {
 
       // Define clean URL mappings
       const cleanUrlMappings = {
+        '/lead-generation-index': '/lead-generation/index.html',
         '/faq': '/faq-page.html',
         '/pricing': '/pricing-page.html',
         '/terms-conditions': '/terms-conditions-page.html',
